@@ -17,11 +17,43 @@ app.get("/", (req, res) => {
 
 // get for today page
 app.get("/today", (req, res) => {
+  let today = getTodayDate();
+  let data = {
+    day: today[0],
+    month: today[1],
+    date: today[2],
+  };
+  res.render("today.ejs", data);
+});
+
+let items = [];
+app.post("/today", (req, res) => {
+  let heading = req.body["modal-heading-input"];
+  let description = req.body[["modal-description-input"]];
+  let today = getTodayDate();
+  let itemObject = {
+    heading: heading,
+    description: description,
+  };
+  items.push(itemObject);
+  res.render("today.ejs", {
+    item: items,
+    day: today[0],
+    month: today[1],
+    date: today[2],
+  });
+});
+
+// server listening
+app.listen(port, () => {
+  console.log(`Server up and running, Listening in port ${port}`);
+});
+
+function getTodayDate() {
   let today = new Date();
   let day = today.getDay();
   let month = today.getMonth();
   let date = today.getDate();
-  console.log();
   const dayNames = [
     "Sunday",
     "Monday",
@@ -50,22 +82,5 @@ app.get("/today", (req, res) => {
     month: monthName[month],
     date: date,
   };
-  res.render("today.ejs", data);
-});
-
-let items = [];
-app.post("/today", (req, res) => {
-  let heading = req.body["modal-heading-input"];
-  let description = req.body[["modal-description-input"]];
-  let itemObject = {
-    heading: heading,
-    description: description,
-  };
-  items.push(itemObject);
-  res.render("today.ejs", { item: items });
-});
-
-// server listening
-app.listen(port, () => {
-  console.log(`Server up and running, Listening in port ${port}`);
-});
+  return [dayNames[day], monthName[month], date];
+}
