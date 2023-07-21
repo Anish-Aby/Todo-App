@@ -299,7 +299,7 @@ body {
 .modal-card-button-container {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     z-index: 3;
 }
 
@@ -307,6 +307,13 @@ body {
     background-color: #EB7A53;
     color: black;
 }
+
+.add-item-form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
 
 .hidden {
     display: none;

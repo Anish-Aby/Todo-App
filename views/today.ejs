@@ -10,33 +10,26 @@
       </div>
       <div class="current-date-container">
         <div class="current-date-card">
-            <div class="current-date">Thursday,  July 21</div>
+            <div class="current-date"><%= day %>, <%= month %> <%= date %></div>
         </div>
       </div>
       <div class="main-second-page-card-container">
         <div class="main-second-page-card">
-            <div class="right-card-bubble">
+            <% if (locals.item) { %>
+                <% item.forEach((i) => { %>
+                    <div class="right-card-bubble">
                     <div class="bubble-button-container">
                         <button class="bubble-button"></button>
                     </div>
                     <div class="bubble-content-container">
-                        <div class="bubble-content-head">Return Tanjiro's sword 🌊</div>
+                        <div class="bubble-content-head"><%= i.heading %></div>
                         <div class="bubble-content-description-container">
-                            <div class="bubble-content-description">Avoid Inosuke! 👀</div>
+                            <div class="bubble-content-description"><%= i.description %></div>
                         </div>
                     </div>
                 </div>
-                <div class="right-card-bubble">
-                    <div class="bubble-button-container">
-                        <button class="bubble-button"></button>
-                    </div>
-                    <div class="bubble-content-container">
-                        <div class="bubble-content-head">Return Tanjiro's sword 🌊</div>
-                        <div class="bubble-content-description-container">
-                            <div class="bubble-content-description">Avoid Inosuke! 👀</div>
-                        </div>
-                    </div>
-                </div>
+                <% }) %>     
+             <% } %>
         </div>
       </div>
       <!-- add item modal -->
@@ -44,18 +37,20 @@
         <div class="modal-card-title">
             Add item
         </div>
-        <div class="modal-card-heading-container">
-            <div class="modal-card-heading">Heading</div>
-            <input class="modal-card-heading-input" name="modal-heading-input">
-        </div>
-        <div class="modal-card-heading-container">
-            <div class="modal-card-heading">Description</div>
-            <input class="modal-card-heading-input" name="modal-description-input">
-        </div>
-        <div class="modal-card-button-container">
-            <button class="add-item-modal second-page-button" id="add-item-modal">Add item</button>
-            <button class="second-page-button" id="cancel">Cancel</button>
-        </div>
+        <form class="add-item-form" action="/today" method="POST">
+            <div class="modal-card-heading-container">
+                <div class="modal-card-heading">Heading</div>
+                <input class="modal-card-heading-input" name="modal-heading-input" id="modal-heading-input" required>
+            </div>
+            <div class="modal-card-heading-container">
+                <div class="modal-card-heading">Description</div>
+                <input class="modal-card-heading-input" name="modal-description-input" id="modal-description-input" required>
+            </div>
+            <div class="modal-card-button-container">
+                <button type="submit" class="add-item-modal second-page-button" id="add-item-modal">Add item</button>
+                <button class="second-page-button" id="cancel">Cancel</button>
+            </div>
+        </form>
       </div>
 
     <div class="overlay hidden"></div>

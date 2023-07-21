@@ -8,14 +8,61 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // get for landing page
 app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
+// get for today page
 app.get("/today", (req, res) => {
-  res.render("today.ejs");
+  let today = new Date();
+  let day = today.getDay();
+  let month = today.getMonth();
+  let date = today.getDate();
+  console.log();
+  const dayNames = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const monthName = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let data = {
+    day: dayNames[day],
+    month: monthName[month],
+    date: date,
+  };
+  res.render("today.ejs", data);
+});
+
+let items = [];
+app.post("/today", (req, res) => {
+  let heading = req.body["modal-heading-input"];
+  let description = req.body[["modal-description-input"]];
+  let itemObject = {
+    heading: heading,
+    description: description,
+  };
+  items.push(itemObject);
+  res.render("today.ejs", { item: items });
 });
 
 // server listening
