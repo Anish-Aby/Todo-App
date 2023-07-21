@@ -14,6 +14,10 @@ app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
+app.get("/today", (req, res) => {
+  res.render("today.ejs");
+});
+
 // server listening
 app.listen(port, () => {
   console.log(`Server up and running, Listening in port ${port}`);

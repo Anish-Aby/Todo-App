@@ -67,7 +67,7 @@ body {
     border: none;
     background-color: #F6ECC9;
     padding: 1rem;
-    border-radius: 80px;
+    border-radius: 15px;
 }
 
 .start-button:hover {
@@ -155,4 +155,170 @@ body {
 .button-task-complete {
     opacity: 100%;
     background-color: #EB7A53;
+}
+
+/* TODO: make first page responsive */
+
+/* Today page */
+.main-container-today {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 2rem 3rem 0 3rem;
+    gap: 2rem;
+}
+
+.category-selector-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 3rem;
+}
+
+.second-page-button {
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border: none;
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+}
+
+.second-page-button:hover {
+    cursor: pointer;
+    color: black;
+    background-color: #EB7A53;
+}
+
+.second-page-button-active {
+    color: black;
+    background-color: #EB7A53;
+}
+
+/* second page date card */
+.current-date-container {
+    display: flex;
+    justify-content: center;
+}
+
+.current-date {
+    margin: 0;
+    font-family: 'Lobster Two', cursive;
+    font-weight: bold;
+    font-size: 6rem;
+    color: white;
+}
+
+/* second page main card */
+.main-second-page-card-container {
+    display: flex;
+    justify-content: start;
+    min-height: 5rem;
+    padding: 0 35rem;
+}
+
+.main-second-page-card {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    justify-content: center;
+    border-radius: 15px;
+    width: 100%;
+    background-color: #242424;
+
+}
+
+.add-item {
+    position: fixed;
+    right: 5rem;
+    bottom: 5rem;
+    width: 10rem;
+    color: black;
+    background-color: #EB7A53;
+}
+
+.add-item:hover {
+    transform: scale(1.1);
+}
+
+/* add item modal */
+.modal-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #242424;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 40%;
+    padding: 3rem 0;
+    border-radius: 15px;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-card-title {
+    font-family: 'Lobster Two', cursive;
+    font-weight: bold;
+    font-size: 3rem;
+    color: white;
+}
+
+.modal-card-heading-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-card-heading {
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.modal-card-heading-input {
+    border: none;
+    border-radius: 15px;
+    width: 35rem;
+    padding: 1rem;
+    background-color: #F6ECC9;
+    color: black;
+    font-family: 'Domine', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.modal-card-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    z-index: 3;
+}
+
+.add-item-modal {
+    background-color: #EB7A53;
+    color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 5;
 }
