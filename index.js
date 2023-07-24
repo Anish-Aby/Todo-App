@@ -6,7 +6,7 @@ import bodyParser from "body-parser";
 
 // declaring express app and port
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3030;
 app.use(express.static("public"));
 
 app.use(
@@ -95,8 +95,8 @@ app.post("/today", (req, res) => {
 });
 
 // server listening
-app.listen(port, () => {
-  console.log(`Server up and running, Listening in port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server up and running, Listening in port ${PORT}`);
 });
 
 function getTodayDate() {
