@@ -1,5 +1,28 @@
 body {
     background-color: black;
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #242424;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #EB7A53;
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-button {
+    height: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 /* Main container */
@@ -110,6 +133,7 @@ body {
     width: 25rem;
     height: 7rem;
     border-radius: 35px 35px 0 35px;
+    overflow: auto;
 }
 
 .bubble-button-container {
@@ -157,7 +181,6 @@ body {
     background-color: #EB7A53;
 }
 
-/* TODO: make first page responsive */
 
 /* Today page */
 .main-container-today {
@@ -328,4 +351,478 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(5px);
     z-index: 5;
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+    .main-container {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        gap: 1rem;
+    }
+
+    .left-header {
+        font-size: 6rem;
+    }
+
+    .l-main-container-1st {
+        min-width: fit-content;
+    }
+
+    .left-main-container {
+        gap: 2rem;
+    }
+
+    .left-header,
+    .left-subheader,
+    .left-paragraph {
+        text-align: center;
+    }
+
+    /* Left container */
+    .paragraph-container {
+        min-width: 100%;
+    }
+
+    .front-page-form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .start-button {
+        font-size: 2rem;
+    }
+
+    .right-card-container {
+        width: 25rem;
+    }
+
+    .right-card-bubble {
+        width: 20rem;
+        padding: 0 0 1rem 0;
+        overflow: auto;
+    }
+
+    /* today-page */
+    .main-container-today {
+        padding: 0;
+    }
+
+    .category-selector-container {
+        justify-content: space-evenly;
+    }
+
+    .current-date-container {
+        text-align: center;
+    }
+
+    .current-date {
+        font-size: 3rem;
+    }
+
+    .main-second-page-card-container {
+        padding: 0;
+    }
+
+    .main-second-page-card {
+        padding: 1rem 0;
+    }
+
+    .modal-card {
+        width: 100%;
+    }
+
+    .add-item-form {
+        max-width: 100%;
+    }
+
+    .modal-card-heading-input {
+        padding: 0.3rem;
+        width: auto;
+    }
+
+    .add-item {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        right: 0;
+        bottom: 1rem;
+        padding: 0;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .main-container {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-main-container {
+        height: fit-content;
+    }
+
+    .left-header {
+        font-size: 6rem;
+    }
+
+    .left-header,
+    .left-subheader,
+    .left-paragraph {
+        text-align: center;
+    }
+
+    .left-subheader {
+        font-size: 3rem;
+    }
+
+    .left-paragraph {
+        font-size: 2rem;
+    }
+
+    /* Left container */
+    .paragraph-container {
+        align-self: center;
+        text-align: center;
+    }
+
+    .front-page-form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .start-button {
+        font-size: 2rem;
+    }
+
+    /* Right container */
+    .right-card-container {
+        width: 80%;
+    }
+
+    .right-card-bubble {
+        width: 80%;
+    }
+
+    .bubble-button {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .bubble-content-head {
+        font-size: 1.5rem;
+    }
+
+    /* today-page */
+    .main-container-today {
+        padding: 0;
+    }
+
+    .category-selector-container {
+        justify-content: space-evenly;
+    }
+
+    .second-page-button {
+        font-size: 2rem;
+    }
+
+    .current-date-container {
+        text-align: center;
+    }
+
+    .current-date {
+        font-size: 5rem;
+    }
+
+    .main-second-page-card-container {
+        padding: 0;
+    }
+
+    .main-second-page-card {
+        padding: 1rem 0;
+        margin: 0 2rem;
+    }
+
+    .modal-card {
+        width: 100%;
+    }
+
+    .add-item-form {
+        max-width: 100%;
+    }
+
+    .modal-card-heading-input {
+        padding: 0.3rem;
+
+    }
+
+    .add-item {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        right: 2rem;
+        bottom: 5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+}
+
+@media (min-width:769px) and (max-width: 1024px) {
+    .main-container {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-main-container {
+        height: fit-content;
+    }
+
+    .left-header {
+        font-size: 9rem;
+    }
+
+    .left-header,
+    .left-subheader,
+    .left-paragraph {
+        text-align: center;
+    }
+
+    .left-subheader {
+        font-size: 3.5rem;
+    }
+
+    .left-paragraph {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+
+    /* Left container */
+    .paragraph-container {
+        align-self: center;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .front-page-form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .start-button {
+        font-size: 2rem;
+    }
+
+    /* Right container */
+    .right-card-container {
+        width: 80%;
+    }
+
+    .right-card-bubble {
+        width: 80%;
+    }
+
+    .bubble-button {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .bubble-content-head {
+        font-size: 2rem;
+    }
+
+    /* today-page */
+    .main-container-today {
+        padding: 0;
+    }
+
+    .category-selector-container {
+        justify-content: space-evenly;
+    }
+
+    .second-page-button {
+        font-size: 2rem;
+    }
+
+    .current-date-container {
+        text-align: center;
+    }
+
+    .current-date {
+        font-size: 5rem;
+    }
+
+    .main-second-page-card-container {
+        padding: 0;
+    }
+
+    .main-second-page-card {
+        padding: 1rem 0;
+        margin: 0 2rem;
+    }
+
+    .modal-card {
+        width: 100%;
+    }
+
+    .modal-card-title {
+        font-size: 5rem;
+    }
+
+    .add-item-form {
+        width: 100%;
+    }
+
+    .modal-card-heading {
+        font-size: 3rem;
+    }
+
+    .modal-card-heading-input {
+        padding: 0.3rem;
+        font-size: 2.5rem;
+        width: 90%;
+    }
+
+    .add-item {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        right: 2rem;
+        bottom: 5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1400px) {
+    .main-container {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-main-container {
+        height: fit-content;
+    }
+
+    .left-header {
+        font-size: 9rem;
+    }
+
+    .left-header,
+    .left-subheader,
+    .left-paragraph {
+        text-align: center;
+    }
+
+    .left-subheader {
+        font-size: 3.5rem;
+    }
+
+    .left-paragraph {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+
+    /* Left container */
+    .paragraph-container {
+        align-self: center;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .front-page-form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .start-button {
+        font-size: 2rem;
+    }
+
+    /* Right container */
+    .right-card-container {
+        width: 80%;
+    }
+
+    .right-card-bubble {
+        width: 80%;
+    }
+
+    .bubble-button {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .bubble-content-head {
+        font-size: 2rem;
+    }
+
+    /* today-page */
+    .main-container-today {
+        padding: 0;
+    }
+
+    .category-selector-container {
+        justify-content: space-evenly;
+    }
+
+    .second-page-button {
+        font-size: 2rem;
+    }
+
+    .current-date-container {
+        text-align: center;
+    }
+
+    .current-date {
+        font-size: 5rem;
+    }
+
+    .main-second-page-card-container {
+        padding: 0;
+    }
+
+    .main-second-page-card {
+        padding: 1rem 0;
+        margin: 0 2rem;
+    }
+
+    .modal-card {
+        width: 100%;
+    }
+
+    .modal-card-title {
+        font-size: 5rem;
+    }
+
+    .add-item-form {
+        width: 100%;
+    }
+
+    .modal-card-heading {
+        font-size: 3rem;
+        padding: 0 1rem;
+    }
+
+    .modal-card-heading-input {
+        padding: 0.3rem 1rem;
+        font-size: 2.5rem;
+        width: 90%;
+    }
+
+    .add-item {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        right: 2rem;
+        bottom: 5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
 }
