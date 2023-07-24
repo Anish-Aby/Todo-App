@@ -2,11 +2,13 @@
 <div class="main-container-today">
       <div class="category-selector-container">
         <div class="today-button-container">
-            <button class="second-page-button second-page-button-active" id="today" formaction="/today">Today</button>
+            <form action="/today">
+                <button class="second-page-button" id="today" formaction="/today">Today</button>
+            </form>
         </div>
         <div class="work-button-container">
             <form class="work-button-form" action="/work" method="get">
-                <button class="second-page-button" id="work" formaction="/work">Work</button>
+                <button class="second-page-button second-page-button-active" id="work" formaction="/work">Work</button>
             </form>
         </div>
       </div>
@@ -39,7 +41,7 @@
         <div class="modal-card-title">
             Add item
         </div>
-        <form class="add-item-form" action="/today" method="POST">
+        <form class="add-item-form" action="/work" method="POST">
             <div class="modal-card-heading-container">
                 <div class="modal-card-heading">Heading</div>
                 <input class="modal-card-heading-input" name="modal-heading-input" id="modal-heading-input" required>

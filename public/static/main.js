@@ -8,7 +8,6 @@ $(".bubble-button").on("click", (e) => {
 let tracker = 1;
 const today = $("#today");
 const work = $("#work");
-today.toggleClass("second-page-button-active");
 
 today.on("click", (e) => {
   if (tracker === 2) {

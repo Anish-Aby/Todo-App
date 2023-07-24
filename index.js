@@ -15,6 +15,9 @@ app.use(
   })
 );
 
+let workItems = [];
+let items = [];
+
 // get for landing page
 app.get("/", (req, res) => {
   res.render("index.ejs");
@@ -28,13 +31,49 @@ app.get("/today", (req, res) => {
     day: today[0],
     month: today[1],
     date: today[2],
+    item: items,
   };
 
   res.render("today.ejs", data);
 });
 
-let items = [];
+// get for work page
+app.get("/work", (req, res) => {
+  let today = getTodayDate();
 
+  let data = {
+    day: today[0],
+    month: today[1],
+    date: today[2],
+    item: workItems,
+  };
+
+  res.render("work.ejs", data);
+});
+
+// post for work
+
+app.post("/work", (req, res) => {
+  let heading = req.body["modal-heading-input"];
+  let description = req.body[["modal-description-input"]];
+  let today = getTodayDate();
+
+  let itemObject = {
+    heading: heading,
+    description: description,
+  };
+
+  workItems.push(itemObject);
+
+  res.render("work.ejs", {
+    item: workItems,
+    day: today[0],
+    month: today[1],
+    date: today[2],
+  });
+});
+
+// post for today
 app.post("/today", (req, res) => {
   let heading = req.body["modal-heading-input"];
   let description = req.body[["modal-description-input"]];
