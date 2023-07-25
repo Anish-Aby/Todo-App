@@ -343,7 +343,7 @@ body {
 }
 
 .overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -824,5 +824,21 @@ body {
         bottom: 5rem;
         padding: 0.5rem;
         font-size: 2rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .main-second-page-card-container {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-second-page-card {
+        max-width: 30%;
+    }
+
+    .modal-card {
+        min-width: 50%;
     }
 }
